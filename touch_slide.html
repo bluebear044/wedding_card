@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Touch Slider Test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchslider.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {	
+		$(".touchslider-demo").touchSlider({mouseTouch: true});		
+	});
+</script>
+</head>
+
+<body>
+	<div class="touchslider touchslider-demo">
+		<div class="touchslider-viewport" style="width:500px;overflow:hidden;position:relative;height:345px">
+			<div class="touchslider-item"><img src="http://touchslider.com/images/3540115854_5d302001da.jpg" width="500" height="345" alt="Tree and cloud"></div>
+			<div class="touchslider-item"><img src="http://touchslider.com/images/3540231388_f8ec22b549.jpg" width="500" height="345" alt="Ekaterina smile"></div>
+			<div class="touchslider-item"><img src="http://touchslider.com/images/3542680555_ea43d85e0a.jpg" width="500" height="345" alt="Dasha &amp; Masha"></div>
+			<div class="touchslider-item"><img src="http://touchslider.com/images/3546828250_6f91b64ba7.jpg" width="500" height="345" alt="Nastya">&nbsp;</div>
+		</div>
+	</div>
+</body>
+</html>

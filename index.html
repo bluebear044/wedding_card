@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="myApp" ng-controller="mainController">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>{{siteTitle}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="css/thumbnail-gallery.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Angular JS -->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+
+    <!-- Angular JS Module-->
+    <script src="app/controllers/controllers.js"></script>
+
+    <!-- Java Script -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Jssor Slider -->
+    <script src="js/jssor.slider.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Header Menu -->
+    <div ng-include="'app/partials/header.html'"></div>
+
+    <div ng-include="'jssor_slide.html'"></div>
+
+    <!-- View Contents -->
+    <div ng-view></div>
+
+    <!-- Footer -->
+    <div ng-include="'app/partials/footer.html'"></div>
+
+  </body>
+</html>

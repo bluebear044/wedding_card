@@ -1,0 +1,3 @@
+#touchSlider { width:100%; height:150px; margin:0 auto; background:#ccc; position:relative; overflow:hidden; }
+#touchSlider ul { width:99999px; height:150px; position:absolute; top:0; left:0; overflow:hidden; }
+#touchSlider ul li { float:left; width:100%; height:150px; background:#9C9; font-size:14px; color:#fff; }

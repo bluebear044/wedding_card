@@ -1,0 +1,25 @@
+<div class="container">
+
+	<div class="row">
+	    <div class="col-xs-12">
+	        <h1 class="page-header">{{menuName}}</h1>
+	    </div>
+	<div>
+
+	<div class="row">
+		<div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="item in albumList">
+			<a class="thumbnail" href="#/photo" data-toggle="modal" data-target=".modal_{{item.name}}">
+			<img class="img-responsive" src="{{item.src}}" >
+			</a>
+			<!-- Modal Contents (Hidden)-->
+			<div class="modal fade modal_{{item.name}}" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+					<img class="img-responsive" src="{{item.src}}" data-dismiss="modal">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /.container -->

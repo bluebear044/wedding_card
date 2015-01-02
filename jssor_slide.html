@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple Slider Example - Jssor Slider, Carousel, Slideshow</title>
+</head>
+<body>
+    
+    <script type="text/javascript-lazy">
+        jssor_slider1_starter = function (containerId) {
+            var options = {
+                $AutoPlay: false,                                   //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $DragOrientation: 1                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+            };
+
+            var jssor_slider1 = new $JssorSlider$(containerId, options);
+        };
+    </script>
+
+    <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; overflow: hidden;">
+            <div><img u="image" src="album/IMG_1.JPG" /></div>
+            <div><img u="image" src="album/IMG_2.JPG" /></div>
+            <div><img u="image" src="album/IMG_3.JPG" /></div>
+            <div><img u="image" src="album/IMG_4.JPG" /></div>
+            <div><img u="image" src="album/IMG_5.JPG" /></div>
+            <div><img u="image" src="album/IMG_6.JPG" /></div>
+        </div>
+        <a style="display: none" href="http://www.jssor.com">javascript</a>
+        <!-- Trigger -->
+        <script type="text/javascript-lazy">
+            jssor_slider1_starter('slider1_container');
+        </script>
+    </div>
+    <!-- Jssor Slider End -->
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<div class="container">
+
+  <div class="starter-template">
+    <h1>{{invitationSubject}}</h1>
+    <p class="lead" ng-bind-html="invitationContents"></p>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <a href="tel:{{bridegroomTel}}">
+        <p><img src="images/tel_icon.png" width="68" height="68" /></p>
+        <p>신랑에게</p>
+      </a>
+    </div>
+    <div class="col-xs-3">
+      <a href="tel:{{brideTel}}">
+        <p><img src="images/tel_icon.png" width="68" height="68" /></p>
+        <p>신부에게</p>
+      </a>
+    </div>    
+    <div class="col-xs-3">
+      <a href="sms:{{bridegroomTel}}">
+        <p><img src="images/sms_icon.png" width="68" height="68" /></p>
+        <p>신랑에게</p>
+      </a>
+    </div>    
+    <div class="col-xs-3">
+      <a href="sms:{{brideTel}}">
+        <p><img src="images/sms_icon.png" width="68" height="68" /></p>
+        <p>신부에게</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <a href="#/map">
+        <p><img src="images/map_icon.png" width="68" height="68" /></p>
+        <p>{{menuName02}}</p>
+      </a>
+    </div>
+    <div class="col-xs-3">
+      <a href="#/photo">
+        <p><img src="images/photo_icon.png" width="68" height="68" /></p>
+        <p>{{menuName03}}</p>
+      </a>
+    </div>    
+    <div class="col-xs-3">
+      <a id="kakao-link-btn" href="javascript:;">
+        <p><img src="images/kakao_icon.png" width="68" height="68" /></p>
+        <p>카카오톡</p>
+      </a>
+    </div>    
+    <div class="col-xs-3">
+      <a href="#">
+        <p><img src="images/facebook_icon.png" width="68" height="68" /></p>
+        <p>페이스북</p>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /.container -->
+
+
+<!-- Kakao link library -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script>
+// 사용할 앱의 Javascript 키를 설정해 주세요.
+Kakao.init('{{kakaoKey}}');
+
+// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+Kakao.Link.createTalkLinkButton({
+  container: '#kakao-link-btn',
+  label: '{{kakoLinkText}}',
+  image: {
+    src: '{{kakoLinkImage}}',
+    width: '300',
+    height: '200'
+  },
+  webButton: {
+    text: '{{kakoLinkText}}',
+    url: '{{kakoLinkUrl}}' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+  }
+});
+</script>
