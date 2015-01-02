@@ -6,13 +6,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/main">{{siteTitle}}</a>
+      <a class="navbar-brand" href="#/main">{{myConfig.siteTitle}}</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ng-class="{'active':getClass('/main')}"><a href="#/main">{{menuName01}}</a></li>
-        <li ng-class="{'active':getClass('/map')}"><a href="#/map">{{menuName02}}</a></li>
-        <li ng-class="{'active':getClass('/photo')}"><a href="#/photo">{{menuName03}}</a></li>
+        <li ng-class="{'active':getClass('/main')}"><a href="#/main">{{myConfig.menuName01}}</a></li>
+        <li ng-class="{'active':getClass('/map')}"><a href="#/map">{{myConfig.menuName02}}</a></li>
+        <li ng-class="{'active':getClass('/photo')}"><a href="#/photo">{{myConfig.menuName03}}</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

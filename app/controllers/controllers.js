@@ -21,7 +21,7 @@
     }(angular));
 
     // create the module and name it myApp
-    var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize','ngLoadScript']);
+    var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize','ngLoadScript','ngResource']);
 
     // configure our routes
     myApp.config(function($routeProvider) {
@@ -51,28 +51,24 @@
     });
 
     // Message Setting
-    var siteTitle = '모바일 청첩장';
-    var menuName01 = '처음으로';
-    var menuName02 = '오시는길';
-    var menuName03 = '갤러리';
-
-    var kakaoKey = 'YOUR_APP_KEY';
-    var kakoLinkText = '모바일 청첩장입니다.';
-    var kakoLinkImage = 'http://dn.api1.kage.kakao.co.kr/14/dn/btqaWmFftyx/tBbQPH764Maw2R6IBhXd6K/o.jpg';
-    var kakoLinkUrl = 'http://192.168.0.5:7000/';
+    myApp.constant('myConfig', {
+        siteTitle: "모바일 청첩장",
+        menuName01: "처음으로",
+        menuName02: "오시는길",
+        menuName03: "갤러리",
+        kakaoKey: "YOUR_APP_KEY",
+        kakoLinkText: "모바일 청첩장입니다.",
+        kakoLinkImage: "http://dn.api1.kage.kakao.co.kr/14/dn/btqaWmFftyx/tBbQPH764Maw2R6IBhXd6K/o.jpg",
+        kakoLinkUrl: "http://192.168.0.5:7000/"
+    });
 
     // create the controller and inject Angular's $scope
-    myApp.controller('mainController', function($scope, $location) {
-        // create a message to display in our view
-        $scope.siteTitle = siteTitle;
-        $scope.menuName01 = menuName01;
-        $scope.menuName02 = menuName02;
-        $scope.menuName03 = menuName03;
-        $scope.kakaoKey = kakaoKey;
-        $scope.kakoLinkText = kakoLinkText;
-        $scope.kakoLinkImage = kakoLinkImage;
-        $scope.kakoLinkUrl = kakoLinkUrl;
+    myApp.controller('mainController', function($scope, $location, myConfig) {
 
+        //Common Config
+        $scope.myConfig = myConfig;
+
+        // create a message to display in our view
         $scope.companyName = 'BLueBear, Inc.';
         $scope.companyAddress = '서울특별시 중랑구';
         $scope.companyMail = 'abc@abc.com';
@@ -94,9 +90,11 @@
 
     });
 
-    myApp.controller('mapController', function($scope) {
+    myApp.controller('mapController', function($scope, myConfig) {
 
-        $scope.menuName = menuName02;
+        //Common Config
+        $scope.myConfig = myConfig;
+
         $scope.addresss = '명동대성당 : 서울특별시 중구 명동2가 1-1';
 
         $scope.subwayList = [
@@ -113,9 +111,11 @@
 
     });
 
-    myApp.controller('photoController', function($scope) {
+    myApp.controller('photoController', function($scope, myConfig) {
 
-        $scope.menuName = menuName03;
+        //Common Config
+        $scope.myConfig = myConfig;
+
         $scope.albumList = [
                                       {name:'img_01', src:'album/IMG_1.JPG'},
                                       {name:'img_02',src:'album/IMG_2.JPG'},
