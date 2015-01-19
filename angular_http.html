@@ -75,12 +75,42 @@
         //$http.get("http://localhost:9000/api/user").success(function(response) { $scope.users = response; });
         
         //using $resource
-        $scope.users = User.query();
-        $scope.user = User.get({},{'id': 5});
-        $scope.saveResult = User.save({'name': 'Kumar'});
+        User.query(function(data) {
+            // success handler
+            $scope.users = data;
+        }, function(error) {
+            // error handler
+            alert("ERROR !!");
+            console.log(error);
+        });
+
+        User.get({},{'id': 5}, function(data) {
+            // success handler
+            $scope.user = data;
+        }, function(error) {
+            // error handler
+            alert("ERROR !!");
+            console.log(error);
+        });
+
+        User.save({'name': 'Kumar'},function(data) {
+            // success handler
+            $scope.saveResult = data;
+        }, function(error) {
+            // error handler
+            alert("ERROR !!");
+            console.log(error);
+        });
 
         $scope.getUser = function() {
-            $scope.getUserResult = User.get({},{'id': $scope.textValue});
+            User.get({},{'id': $scope.textValue}, function(data) {
+                // success handler
+                $scope.getUserResult = data;
+            }, function(error) {
+                // error handler
+                alert("ERROR !!");
+                console.log(error);
+            });
         };
 
     });
@@ -90,7 +120,7 @@
             "http://localhost:9000/api/user/:id",
             {id: "@id" },
             {
-                //"add": {method: "POST"}
+                //"modify": {method: "PUT"}
             }
         );
     });
