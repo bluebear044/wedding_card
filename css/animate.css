@@ -1,0 +1,11 @@
+div {
+    opacity: 1;
+}
+div.ng-enter {
+    -webkit-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+div.ng-enter-active {
+    opacity: 1;
+}

@@ -21,7 +21,7 @@
     }(angular));
 
     // create the module and name it myApp
-    var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize','ngLoadScript','ngResource']);
+    var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize','ngLoadScript','ngResource','ngAnimate']);
 
     // configure our routes
     myApp.config(function($routeProvider) {
